@@ -8,15 +8,10 @@ const app = express()
 const port = 3001
 app.set('trust proxy', '127.0.0.1')
 
-mongoose.connect('mongodb://localhost/__DB_PROJECT__')
+mongoose.connect('mongodb://localhost/MOVIES_DB')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(session({
-  name: '__PROJECT__',
-  secret: '111',
-  secure: false
-}))
 
 app.use(require('./config/error-handler'))
 
